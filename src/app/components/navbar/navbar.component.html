@@ -1,0 +1,73 @@
+<nav class="contact-nav">
+    <div class="container">
+        <div class="flex">
+            <!-- Right Nav -->
+            <div class="right-nav">
+                <ng-container *ngIf="isLogged">
+                    <div>
+                        <img src="assets/img/uil_envelope-alt.svg" alt="">
+                        <p>{{user?.email}}</p>
+                    </div>
+                    <div>
+                        <img src="assets/img/bx_bx-phone-call.svg" alt="">
+                        <p>{{user?.username}}</p>
+                    </div>
+
+                </ng-container>
+            </div>
+
+            <!-- Left nav -->
+            <div class="left-nav">
+                <a href="#">English <img src="assets/img/akar-icons_chevron-down2.svg"  alt=""></a>
+                <a href="#">USD <img src="assets/img/akar-icons_chevron-down2.svg" alt=""></a>
+                <a href="#">Wishlist <img src="assets/img/uil_heart-alt - Copy.svg" alt=""></a>
+                
+                <a *ngIf="!isLogged" routerLink="login">Login <img src="assets/img/carbon_user.svg" alt=""></a>
+                <a *ngIf="isLogged" href="" (click)="signOutAction()" >Sign Out <img src="assets/img/carbon_user.svg" alt=""></a>
+                    
+                <a ><img src="assets/img/fluent_cart-24-regular.svg" alt=""></a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Nav -->
+<nav class="main-nav">
+    <div class="container">
+        <div class="flex">
+            <div class="logo" [routerLink]="['/']"><h1>NTTDATA</h1></div>
+            <div class="nav-items">
+                <a [routerLink]="['/']" routerLinkActive="active" >Home <img src="assets/img/akar-icons_chevron-down.svg"></a>
+                <a href="#" routerLinkActive="active">Pages</a>
+                <a href="#" routerLinkActive="active">Products</a>
+                <a [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
+                <a href="#">Shop</a>
+                <a href="./contact us.html" routerLinkActive="active">Contact</a>
+            </div>
+            <form class="search-input" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+            <!-- <form class="search-input" #search  #login="ngForm" (ngSubmit)="searchAction(search)"> -->
+                <!-- <input type="text" #query="ngModel" name="query" ngModel> -->
+                <input type="text" formControlName="query">
+                <button type="submit"><img src="assets/img/uil_search.png" alt=""></button>
+            </form>
+
+
+            <!-- Hamburger menu -->
+            <div class="hamburger-menu">
+                <div class="hamburger-btn"><i class="fas fa-bars fa-2x"></i></div>
+                <div class="menu">
+                    <a [routerLink]="['/']" id="active">Home</a>
+                    <a href="#">Pages</a>
+                    <a href="#">Products</a>
+                    <a [routerLink]="['/blog']">Blog</a>
+                    <a href="#">Shop</a>
+                    <a href="./contact us.html">Contact</a>
+                    <a href="./my account.html">Login</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</nav>

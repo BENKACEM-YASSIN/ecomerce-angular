@@ -1,0 +1,276 @@
+/* 
+hekto furniture color theme
+
+darkblue: #151875
+pink: #fb2e86
+light pink: #fff6fb
+green: #08d15f
+orange: #de9034
+yellow: #ffc416
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin sans', 'Lato', sans-serif;
+    line-height: 1.4;
+}
+
+.container {
+    width: min(70em, 90%);
+    margin: auto;
+}
+
+/* Defaults */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fb2e86;
+}
+
+/* Contact Nav */
+nav.contact-nav {
+    background-color: #7E33E0;
+    color: #fff;
+}
+
+nav.contact-nav img {
+    width: 20px;
+    height: 20px;
+}
+
+nav.contact-nav .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav.contact-nav .right-nav {
+    display: flex;
+}
+
+nav.contact-nav a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.right-nav > div {
+    padding-right: 30px;
+    display: flex;
+}
+
+.right-nav div img {
+    margin-right: 10px;
+}
+
+.left-nav {
+    display: flex;
+}
+
+.left-nav a {
+    padding-left: 20px;
+}
+
+/* Main Nav */
+nav.main-nav {
+    position: relative;
+}
+
+.hamburger-btn {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.hamburger-menu .menu {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: 0;
+    height: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    z-index: 4;
+    transition: .3s;
+}
+
+.hamburger-menu .menu a {
+    padding: 10px 0;
+    color: #151875;
+    font-weight: 600;
+}
+
+nav.main-nav .flex{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.main-nav .flex img {
+    width: 20px;
+}
+
+.main-nav #active {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav a {
+    color: #151875;
+}
+
+.main-nav a:hover {
+    color: #fb2e86;
+}
+
+.main-nav .nav-items {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.main-nav .nav-items > *{
+    padding: 0 10px;
+}
+
+header.hero {
+    padding: 70px 0;
+}
+
+header h2 {
+    font-size: 14px;
+}
+
+header h1 {
+    padding-top: 10px;
+}
+
+header p {
+    padding: 20px 0;
+}
+
+/* Section - shopex */
+section.shopex .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Sponsors */
+section.sponsors .flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+section.sponsors .flex img {
+    width: 70%;
+}
+
+/* footer */
+footer .flex {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;  
+}
+
+footer .flex div {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+
+footer .flex div a {
+    padding: 7px 0;
+}
+
+footer .flex div h3 {
+    padding-bottom: 20px;
+}
+
+footer .hekto p {
+    padding: 5px 0;
+}
+
+footer .hekto form input{
+    width: 100%;
+}
+
+
+footer a {
+    color: #00000079;
+}
+
+footer form {
+    display: flex;
+}
+
+footer form button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+footer form input {
+    border: 0;
+    padding: 12px;
+}
+
+.footer img {
+    width: 20px;
+    height: 20px;
+}
+
+.footer {
+    background-color: #3333331f;
+    color: #00000092;
+    padding: 10px 0;
+    font-size: 12px;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsiveness */
+@media (max-width: 1226px) {
+    .lamp {
+        display: none;
+    }
+}
+@media (max-width: 968px) {
+    nav.contact-nav {
+        display: none;
+    }
+
+    nav.main-nav .nav-items, 
+    nav.main-nav form {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+}

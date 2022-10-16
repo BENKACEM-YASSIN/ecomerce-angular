@@ -1,0 +1,40 @@
+
+<!-- Header/Hero Section -->
+<header class="hero main-bg">
+    <div class="container">
+        <div class="flex">
+            <div class="hero-text">
+                <h1 class="blue-text">My Account</h1>
+                <h2>Home . Pages <span class="pink-text">. My Account</span></h2>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Login form -->
+<section class="login-form">
+    <div class="container">
+        <form #login="ngForm" (ngSubmit)="loginAction(login)">
+            <h2>Login</h2>
+            <div *ngIf="isLoginSuccessful" class="alert alert-success">
+                You login has been succeessful , forwarding you to home page soon
+            </div>
+            <div *ngIf="!isLoginSuccessful && login.submitted" class="alert alert-danger">
+                You login has not been succeessful , Try again pleaese
+            </div>
+
+
+            <p class="grey-text">Please login using account detail below.</p>
+            <input #username="ngModel" name="username" autocomplete="off" type="text" ngModel>
+            <input #pass="ngModel"  name="password" autocomplete="off" type="password" ngModel >
+            <!-- <a href="#" class="grey-text" id="text-left">Forgot your password?</a> -->
+            <button>Sign In</button>
+            <!-- <p class="grey-text">Don't have an Account? <a href="#" class="grey-text">Create account</a></p> -->
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+
+
+<script src="js/app.js"></script>

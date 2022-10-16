@@ -1,0 +1,121 @@
+
+
+    <!-- Main Nav -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="flex">
+                <div class="logo"><h1>Hekto</h1></div>
+                <div class="nav-items">
+                    <a [routerLink]="['/']" id="active">Home <img src="img/akar-icons_chevron-down.svg"></a>
+                    <a href="#">Pages</a>
+                    <a [routerLink]="['/shoping-card']">Products</a>
+                    <a [routerLink]="['/blog']">Blog</a>
+                    <a [routerLink]="['/shoping-card']">Shop</a>
+                    <a href="./contact us.html">Contact</a>
+                </div>
+                <form class="search-input">
+                    <input type="text">
+                    <button><img src="img/uil_search.png" alt=""></button>
+                </form>
+
+
+                <!-- Hamburger menu -->
+                <div class="hamburger-menu">
+                    <div class="hamburger-btn"><i class="fas fa-bars fa-2x"></i></div>
+                    <div class="menu">
+                        <a [routerLink]="['/']">Home</a>
+                        <a href="#">Pages</a>
+                        <a [routerLink]="['/shoping-card']">Products</a>
+                        <a [routerLink]="['/blog']">Blog</a>
+                        <a [routerLink]="['/shoping-card']">Shop</a>
+                        <a href="./contact us.html">Contact</a>
+                        <a href="./my account.html">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header/Hero Section -->
+    <header class="hero main-bg">
+        <div class="container">
+            <div class="flex">
+                <div class="hero-text">
+                    <h1 class="blue-text">Hekto Demo</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hekto-demo-page">
+        <div class="container">
+            <div class="demo-header">
+                <h3 class="blue-text">Hekto Demo</h3>
+                <p class="blue-text">Cart/Information/Shipping/Payment</p>
+            </div>
+            <div class="demo-body">
+                <div class="contact-information">
+                    <div>
+                        <div class="hekto-header">
+                            <h3 class="blue-text">Contact Information</h3>
+                            <p class="grey-text">Already have an account? <a href="./my account.html">Log in</a></p>
+                        </div>
+                        <input type="text" placeholder="Email of mobile phone number">
+                        <div><input type="checkbox"><span class="grey-text">Keep me up to date on news and exclusive offers</span></div>
+                    </div>
+
+                    <div>
+                        <div class="hekto-header">
+                            <h3 class="blue-text">Shipping address</h3>
+                        </div>
+                            <div class="two-col">
+                                <input type="text" placeholder="First name (optional)">
+                                <input type="text" placeholder="Last name">
+                            </div>
+                            <input type="text" placeholder="Address">
+                            <input type="text" placeholder="Appaetnent, suit,e.t.c (optional)">
+                            <input type="text" placeholder="City">
+                            <div class="two-col">
+                                <input type="text" placeholder="Country">
+                                <input type="text" placeholder="Postal Code">
+                            </div>
+                    </div>
+                    <button>Continue Shipping</button>
+                </div>
+                <div class="hekto-sidebar">
+                    <div class="demo-related-products">
+                        <div>
+                            <div class="details">
+                                <img src="{{cart.title}}" alt="">
+                                <div>
+                                    <h4 class="blue-text">{{cart.title}}</h4>
+                                    <!-- <p class="grey-text">Color: Brown</p> -->
+                                    <!-- <p class="grey-text">Size: XL</p> -->
+                                </div>
+                            </div>
+                            <div class="price">
+                                <p class="blue-text">${{cart.price}}</p>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <div class="checkout">
+                        <div>
+                            <h3 class="blue-text">Total Product:</h3>
+                            <p class="blue-text">${{cart.totalProducts}}</p>
+                        </div>
+                        <div>
+                            <h3 class="blue-text">Totals:</h3>
+                            <p class="blue-text">${{cart.total}}</p>
+                        </div>
+                        <form class="grey-text">
+                            <input type="checkbox">
+                            shipping & taxes calculated at checkout
+                        </form>
+                        <button class="checkout-btn">Proceed To Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

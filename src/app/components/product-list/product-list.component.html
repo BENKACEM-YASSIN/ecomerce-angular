@@ -1,0 +1,482 @@
+<!-- <p *ngFor="let product of products">
+    <img src="{{product.images[0]}}">
+    {{product.title}}
+    
+</p>  -->
+
+<!-- Featured Products -->
+<section class="featured">
+    <div class="container">
+        <div class="flex">
+            <h2 class="main-header-text">Featured Products</h2>
+            <div class="grid-wrapper">
+                <div class="card" (click)="goToProductItem(product)" *ngFor="let product of products">
+                    
+                    <div class="thumbnail">
+                        <img src="{{ product.thumbnail }}" alt="">
+                    </div>
+                    <div class="description" >
+                        <h3 class=""> {{ product.title }}</h3>
+                        <div class="indicator">
+                            <span id="one"></span>
+                            <span id="two"></span>
+                            <span id="three"></span>
+                        </div>
+                        <div class="code">
+                            <p>Discount</p>
+                            <p>{{product.discountPercentage}}%</p>
+                        </div>
+                        <p class="price">{{product.price}}$</p>
+                    </div>
+                </div>
+                <!-- <div class="card" hidden>
+                    <div class="thumbnail">
+                        <img src="" alt="">
+                    </div>
+                    <div class="description">
+                        <h3 class="">Cantilever chair</h3>
+                        <div class="indicator">
+                            <span id="one"></span>
+                            <span id="two"></span>
+                            <span id="three"></span>
+                        </div>
+                        <div class="code">
+                            <p>Code</p>
+                            <p>Y523201</p>
+                        </div>
+                        <p class="price">$42.00</p>
+                    </div>
+                </div>
+                <div class="card" hidden>
+                    <div class="thumbnail">
+                        <img src="assets/img/image 1169.png" alt="">
+                    </div>
+                    <div class="description">
+                        <h3 class="">Cantilever chair</h3>
+                        <div class="indicator">
+                            <span id="one"></span>
+                            <span id="two"></span>
+                            <span id="three"></span>
+                        </div>
+                        <div class="code">
+                            <p>Code</p>
+                            <p>Y523201</p>
+                        </div>
+                        <p class="price">$42.00</p>
+                    </div>
+                </div>
+                <div class="card" hidden>
+                    <div class="thumbnail">
+                        <img src="assets/img/image 3.png" alt="">
+                    </div>
+                    <div class="description">
+                        <h3 class="">Cantilever chair</h3>
+                        <div class="indicator">
+                            <span id="one"></span>
+                            <span id="two"></span>
+                            <span id="three"></span>
+                        </div>
+                        <div class="code">
+                            <p>Code</p>
+                            <p>Y523201</p>
+                        </div>
+                        <p class="price">$42.00</p>
+                    </div>
+                </div> -->
+            </div>
+            <div class="slider-indicator">
+                <span id="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Products -->
+<section class="latest">
+    <div class="container">
+        <div class="flex">
+            <div class="product-nav">
+                <h2 class="main-header-text">Latest Products</h2>
+                <div class="links">
+                    <a href="#" id="active">New Arrival</a>
+                    <a href="#">Best Seller</a>
+                    <a href="#">Featured</a>
+                    <a href="#">Special Offer</a>
+                </div>
+            </div>
+            <div class="flex-wrapper bold-text main-header-text">
+                <div class="col" routerLink="/product-detail" (click)="goToProductItem(product)" *ngFor="let product of productsByCategory">
+                    
+                    <div class="thumbnail">
+                        <img src="{{ product.thumbnail }}" alt="">
+                    </div>
+                    <div class="text">
+                        <p>{{ product.title }}</p>
+                        <div class="tag">
+                            <p>${{product.price}}</p>
+                            <p class="line-through pink-text">${{product.price+product.price/100}}</p>
+                        </div>
+                    </div>
+                
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Shopex -->
+<section class="shopex">
+    <div class="container">
+        <h2 class="main-header-text">What Shopex Offer!</h2>
+        <div class="flex">
+            <div class="small-card">
+                <img src="assets/img/free-delivery 1.png" alt="">
+                <div class="text">
+                    <h3 class="main-header-text">24/7 Support</h3>
+                    <p class="grey-text">Lorem ipsum, dolor sit amet
+                        consectetur adipisicing elit. Explicabo, aperiam.</p>
+                </div>
+            </div>
+            <div class="small-card">
+                <img src="assets/img/cashback 1.png" alt="">
+                <div class="text">
+                    <h3 class="main-header-text">24/7 Support</h3>
+                    <p class="grey-text">Lorem ipsum, dolor sit amet
+                        consectetur adipisicing elit. Explicabo, aperiam.</p>
+                </div>
+            </div>
+            <div class="small-card">
+                <img src="assets/img/premium-quality 1.png" alt="">
+                <div class="text">
+                    <h3 class="main-header-text">24/7 Support</h3>
+                    <p class="grey-text">Lorem ipsum, dolor sit amet
+                        consectetur adipisicing elit. Explicabo, aperiam.</p>
+                </div>
+            </div>
+            <div class="small-card">
+                <img src="assets/img/24-hours-support 1.png" alt="">
+                <div class="text">
+                    <h3 class="main-header-text">24/7 Support</h3>
+                    <p class="grey-text">Lorem ipsum, dolor sit amet
+                        consectetur adipisicing elit. Explicabo, aperiam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Unique Features -->
+<section class="unique-features main-bg">
+    <div class="container">
+        <div class="flex">
+            <div class="image">
+                <img src="assets/img/Ellipse 63.svg" alt="" id="ellipse">
+                <img src="{{singleProduct[0].thumbnail}}"
+                    class="sofa">
+            </div>
+            <div class="product-features" >
+                <h2 class="main-header-text" id="text-left">Unique Features Of latest &
+                    Trending Products
+                </h2>
+                <div class="feature-list">
+                    <div class="list">
+                        <span class="bullet-1 bullets"></span>
+                        <p class="grey-text">{{singleProduct[0].description}}</p>
+                    </div>
+                    
+                    <!-- <div class="list">
+                        <span class="bullet-2 bullets"></span>
+                        <p class="grey-text">Reinforced with double wood dowels, glue, screw - nails corner blocks and
+                            machine nails</p>
+                    </div>
+                    <div class="list">
+                        <span class="bullet-3 bullets"></span>
+                        <p class="grey-text">Arms, backs and seats are structurally reinforced</p>
+                    </div> -->
+                </div>
+                <form>
+                    <button class="primary-btn"><a href="./shoping cart.html">Add To Cart</a></button>
+                    <div>
+                        <h5 class="blue-text">B&B Italian Sofa</h5>
+                        <p class="blue-text">${{singleProduct[0].price}}</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trending -->
+<section class="trending">
+    <div class="container">
+        <div class="flex">
+            <h2 class="main-header-text">Trending Products</h2>
+            <div class="flex-wrapper">
+                <div class="card">
+                    <div class="thumbnail">
+                        <img src="assets/img/image 1171.png" alt="">
+                    </div>
+                    <div class="description">
+                        <h3 class="main-header-text">Cantiliever chair</h3>
+                        <div class="price">
+                            <p class="main-header-text bold-text">$26.00</p>
+                            <p class="line-through grey-text">$42.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="thumbnail">
+                        <img src="assets/img/image 1170.png" alt="">
+                    </div>
+                    <div class="description">
+                        <h3 class="main-header-text">Cantiliever chair</h3>
+                        <div class="price">
+                            <p class="main-header-text bold-text">$26.00</p>
+                            <p class="line-through grey-text">$42.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="thumbnail">
+                        <img src="assets/img/image 31.png" alt="">
+                    </div>
+                    <div class="description">
+                        <h3 class="main-header-text">Cantiliever chair</h3>
+                        <div class="price">
+                            <p class="main-header-text bold-text">$26.00</p>
+                            <p class="line-through grey-text">$42.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="thumbnail">
+                        <img src="assets/img/image 32 (1).png" alt="">
+                    </div>
+                    <div class="description">
+                        <h3 class="main-header-text">Cantiliever chair</h3>
+                        <div class="price">
+                            <p class="main-header-text bold-text">$26.00</p>
+                            <p class="line-through grey-text">$42.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="bg-pink">
+                    <div class="text">
+                        <h3>23% off in all products</h3>
+                        <a href="#">Shop Now</a>
+                    </div>
+                    <img src="assets/img/image 1162.png" alt="">
+                </div>
+                <div class="row">
+                    <div class="text">
+                        <h3>23% off in all products</h3>
+                        <a href="#">View Collection</a>
+                    </div>
+                    <img src="assets/img/image 1161.png" alt="">
+                </div>
+                <div class="flex-row main-header-text" hidden>
+                    <div class="flex-col">
+                        <div class="thumbnail">
+                            <img src="assets/img/image 30.png" alt="">
+                        </div>
+                        <div class="price-tag">
+                            <h3>Executive Seat chair</h3>
+                            <p class="line-through">$32.00</p>
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <div class="thumbnail">
+                            <img src="assets/img/image 19.png" alt="">
+                        </div>
+                        <div class="price-tag">
+                            <h3>Executive Seat chair</h3>
+                                <p class="line-through">$32.00</p>
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <div class="thumbnail">
+                            <img src="assets/img/image 28.png" alt="">
+                        </div>
+                        <div class="price-tag">
+                            <h3>Executive Seat chair</h3>
+                                <p class="line-through">$32.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Discount Item -->
+<section class="discount-item">
+    <div class="container">
+        <div class="flex">
+            <h2 class="main-header-text">Discount Item</h2>
+            <div class="links">
+                <a href="#" id="active">
+                    Wood Chair
+                </a>
+                <a href="#">Plastic Chair</a>
+                <a href="#">Sofa Collection</a>
+            </div>
+
+            <div class="discount-showcase">
+                <!-- Left side -->
+                <div class="left-side">
+                    <h1 class="main-header-text" id="text-left">20% Discount Of All Products</h1>
+                    <h3 class="pink-text">Earn Sofa Compact</h3>
+                    <p class="grey-text pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Quam
+                        doloremque commodi facilis quas voluptatibus!</p>
+                    <div class="features grey-text">
+                        <div>
+                            <i class="fas fa-check"></i>Material expose like metals
+                        </div>
+                        <div>
+                            <i class="fas fa-check"></i>Clear lines and geomatic figures
+                        </div>
+                        <div>
+                            <i class="fas fa-check"></i>Simple neutral colours.
+                        </div>
+                        <div>
+                            <i class="fas fa-check"></i>Material expose like metals
+                        </div>
+                    </div>
+                    <button class="primary-btn">Shop Now</button>
+                </div>
+
+                <!-- Right side with image-->
+                <div class="right-side">
+                    <img src="assets/img/Ellipse 60.svg" alt="" class="ellipse">
+                    <img src="assets/img/tortuga-01-b 1.png" alt="" class="chair">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Top Categories -->
+<section class="top">
+    <div class="container">
+        <div class="flex">
+            <h2 class="main-header-text">Top Categories</h2>
+            <div class="flex-wrapper">
+                <div class="chair-showcase">
+                    <div class="rounded-card">
+                        <img src="assets/img/image 20.png" alt="">
+                    </div>
+                    <h3>Mini LCW Chair</h3>
+                    <p>$56.00</p>
+                </div>
+                <div class="chair-showcase">
+                    <div class="rounded-card">
+                        <img src="assets/img/image 1168.png" alt="">
+                    </div>
+                    <h3>Mini LCW Chair</h3>
+                    <p>$56.00</p>
+                </div>
+                <div class="chair-showcase">
+                    <div class="rounded-card">
+                        <img src="assets/img/image 1171.png" alt="">
+                    </div>
+                    <h3>Mini LCW Chair</h3>
+                    <p>$56.00</p>
+                </div>
+                <div class="chair-showcase">
+                    <div class="rounded-card">
+                        <img src="assets/img/image 20.png" alt="">
+                    </div>
+                    <h3>Mini LCW Chair</h3>
+                    <p>$56.00</p>
+                </div>
+            </div>
+            <div class="indicators">
+                <span id="active"></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter" style="background-image: url(assets/img/Rectangle\ 102.png);">
+    <div class="container">
+        <div class="flex">
+            <h2 class="main-header-text">Get Latest Update By Subscribing<br>
+                to our Newsletter
+            </h2>
+            <button class="primary-btn">Shop Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- Sponsors -->
+<section class="sponsors">
+    <div class="container">
+        <div class="flex">
+            <img src="assets/img/image 1174.png" alt="">
+        </div>
+    </div>
+</section>
+
+<!-- Latest Blog -->
+<section class="blog">
+    <div class="container">
+        <h2 class="main-header-text">Latest Blog</h2>
+        <div class="flex">
+            <article>
+                <div class="thumbnail">
+                    <img src="assets/img/JIUjvqe2ZHg.png" alt="">
+                </div>
+                <div class="description">
+                    <div class="about">
+                        <h5>Saber Ali</h5>
+                        <h5>21 August,2020</h5>
+                    </div>
+                    <h3 class="blue-text">Top essential Trends in 2021</h3>
+                    <p>More off this less hello samlande lied much
+                        over tightly circa horse taped mightly
+                    </p>
+                    <a href="./single blog.html">Read More</a>
+                </div>
+            </article>
+            <article>
+                <div class="thumbnail">
+                    <img src="assets/img/2dcYhvbHV-M.png" alt="">
+                </div>
+                <div class="description">
+                    <div class="about">
+                        <h5>Saber Ali</h5>
+                        <h5>21 August,2020</h5>
+                    </div>
+                    <h3 id="active">Top essential Trends in 2021</h3>
+                    <p>More off this less hello samlande lied much
+                        over tightly circa horse taped mightly
+                    </p>
+                    <a id="active" href="./single blog.html">Read More</a>
+                </div>
+            </article>
+            <article>
+                <div class="thumbnail">
+                    <img src="assets/img/2dcYhvbHV-M (1).png" alt="">
+                </div>
+                <div class="description">
+                    <div class="about">
+                        <h5>Saber Ali</h5>
+                        <h5>21 August,2020</h5>
+                    </div>
+                    <h3 class="blue-text">Top essential Trends in 2021</h3>
+                    <p>More off this less hello samlande lied much
+                        over tightly circa horse taped mightly
+                    </p>
+                    <a href="./single blog.html">Read More</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>

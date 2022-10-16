@@ -1,0 +1,100 @@
+<!-- Header/Hero Section -->
+<header class="hero main-bg">
+    <div class="container">
+        <div class="flex">
+            <div class="hero-text">
+                <h1 class="blue-text">Shopping Cart</h1>
+                <h2>Home . Pages <span class="pink-text">. Shopping Cart</span></h2>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="shopping-cart">
+    <div class="container">
+        <div class="cart-container">
+            <table class="car-list">
+                <thead>
+                    <tr>
+                        <th>
+                            <h3 class="blue-text">Product</h3>
+                        </th>
+                        <th>
+                            <h3 class="blue-text">Price</h3>
+                        </th>
+                        <th>
+                            <h3 class="blue-text">Quantity</h3>
+                        </th>
+                        <th>
+                            <h3 class="blue-text">Total</h3>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <ng-container *ngFor="let item of cart.products">
+                            <td class="product">
+                                <div class="details">
+                                    <!-- <img src="{{cart.image}}" alt=""> -->
+                                    <div>
+                                        <h4 class="blue-text">{{item.title}}</h4>
+                                        <!-- <p class="grey-text">Color: Brown</p> -->
+                                        <p class="grey-text">Discount: {{item.discountPercentage}}%</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="price">
+                                <div class="price">
+                                    <p class="blue-text">${{item.price}}</p>
+                                </div>
+                            </td>
+                            <td class="quantity">
+                                {{item.quantity}}
+                            </td>
+                            <td class="total">
+                                <p class="blue-text">${{item.total}}</p>
+                            </td>
+                        </ng-container>
+                    </tr>
+
+                    <tr class="cart-list-buttons">
+                        <td><button>Update Cart</button></td>
+                        <td></td>
+                        <td><button>Clear Cart</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <aside>
+                <div class="cart-checkout">
+                    <h3 class="main-header-text">Cart Total</h3>
+                    <div class="checkout">
+                        <div>
+                            <h3 class="blue-text">Total Quantity:</h3>
+                            <p class="blue-text">${{cart.totalQuantity}}</p>
+                        </div>
+                        <div>
+                            <h3 class="blue-text">Totals:</h3>
+                            <p class="blue-text">${{cart.totalProducts}}</p>
+                        </div>
+                        <form class="grey-text">
+                            <input type="checkbox">
+                            shipping & taxes calculated at checkout
+                        </form>
+                        <button class="checkout-btn"><a [routerLink]="['/payments']" routerLinkActive="router-link-active" >Proceed To Checkout</a></button>
+                    </div>
+                </div>
+                <div class="calculate-shipping">
+                    <h3 class="main-header-text">Calculate Shipping</h3>
+                    <div class="calculate">
+                        <input type="text" placeholder="Bangledesh">
+                        <input type="text" placeholder="mirpur Dhaka - 1200">
+                        <input type="text" placeholder="Postal Code">
+                        <button>Calculate Shipping</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+    </div>
+</section>

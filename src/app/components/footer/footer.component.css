@@ -1,0 +1,94 @@
+
+/* footer */
+footer .flex {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;  
+}
+
+footer .flex div {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+
+footer .flex div a {
+    padding: 7px 0;
+}
+
+footer .flex div h3 {
+    padding-bottom: 20px;
+}
+
+footer .hekto p {
+    padding: 5px 0;
+}
+
+footer .hekto form input{
+    width: 100%;
+}
+
+
+footer a {
+    color: #00000079;
+}
+
+footer form {
+    display: flex;
+}
+
+footer form button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+footer form input {
+    border: 0;
+    padding: 12px;
+}
+
+.footer img {
+    width: 20px;
+    height: 20px;
+}
+
+.footer {
+    background-color: #3333331f;
+    color: #00000092;
+    padding: 10px 0;
+    font-size: 12px;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsiveness */
+@media (max-width: 1226px) {
+    .lamp {
+        display: none;
+    }
+}
+@media (max-width: 968px) {
+    nav.contact-nav {
+        display: none;
+    }
+
+    nav.main-nav .nav-items, 
+    nav.main-nav form {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+
+

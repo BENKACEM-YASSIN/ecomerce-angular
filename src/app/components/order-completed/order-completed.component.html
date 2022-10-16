@@ -1,0 +1,66 @@
+
+    <!-- Main Nav -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="flex">
+                <div class="logo"><h1>Hekto</h1></div>
+                <div class="nav-items">
+                    <a [routerLink]="['/']"   id="active">Home <img src="img/akar-icons_chevron-down.svg"></a>
+                    <a href="#" id="active">Pages</a>
+                    <a [routerLink]="['/shoping-card']">Products</a>
+                    <a [routerLink]="['/blog']">Blog</a>
+                    <a [routerLink]="['/shoping-card']">Shop</a>
+                    <a href="./contact us.html">Contact</a>
+                </div>
+                <form class="search-input">
+                    <input type="text">
+                    <button><img src="img/uil_search.png" alt=""></button>
+                </form>
+
+
+                <!-- Hamburger menu -->
+                <div class="hamburger-menu">
+                    <div class="hamburger-btn"><i class="fas fa-bars fa-2x"></i></div>
+                    <div class="menu">
+                        <a [routerLink]="['/']">Home</a>
+                        <a href="#" id="active">Pages</a>
+                        <a [routerLink]="['/shoping-card']">Products</a>
+                        <a [routerLink]="['/blog']">Blog</a>
+                        <a [routerLink]="['/shoping-card']">Shop</a>
+                        <a href="./contact us.html">Contact</a>
+                        <a href="./my account.html">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header/Hero Section -->
+    <header class="hero main-bg">
+        <div class="container">
+            <div class="flex">
+                <div class="hero-text">
+                    <h1 class="blue-text">Order completed</h1>
+                    <h2>Home . Pages <span class="pink-text">. Order Completed</span></h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="order-page">
+        <div class="container">
+            <div class="order-container">
+                <img src="img/order completed/clock 1.svg" alt="" class="absolute">
+                <img src="img/order completed/checklist 1.svg" alt="" class="absolute-1">
+                <div>
+                    <img src="img/order completed/vector 15.svg" alt="">
+                    <h2 class="blue-text">Your Order Is Completed!</h2>
+                    <p class="grey-text">Thank you for the order! Your order is being
+                        processed and will be completed within 3-6
+                        hours. You will receive an email confirmation when your order is completed.
+                    </p>
+                    <button><a [routerLink]="['/']" routerLinkActive="router-link-active" >Continue Shopping</a></button>
+                </div>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,114 @@
+ <!-- Header/Hero Section -->
+ <header class="hero main-bg">
+    <div class="container">
+        <div class="flex">
+            <div class="hero-text">
+                <h1 class="blue-text">Product Details</h1>
+                <h2>Home . Pages <span class="pink-text">. Product Details</span></h2>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="product-details-page">
+    <div class="container">
+        <div class="product">
+            <div class="product-img"  >
+                <!-- no ngFor!! it make deign so ugly hh -->
+                <div class="side-1"><img src="{{product.images[1]}}" alt=""></div>
+                <div class="side-3"><img src="{{product.images[2]}}" alt=""></div>
+                <div class="side-3"><img src="{{product.images[3]}}" alt=""></div>
+                <div class="side-4"><img src="{{product.images[4]}}" alt=""></div>
+            </div>
+            <div class="product-details">
+                <h2 class="blue-text">{{product.title}}</h2>
+                <div class="rating">
+                    <i class="fas fa-star yellow"></i>
+                    <i class="fas fa-star yellow"></i>
+                    <i class="fas fa-star yellow"></i>
+                    <i class="fas fa-star yellow"></i>
+                    <i class="fas fa-star yellow"></i>
+                    (22)
+                </div>
+                <div class="price">
+                    <p class="blue-text">${{product.price}}</p>
+                    <p class="pink-text line-through">${{product.price+13}}</p>
+                </div>
+                <!-- <div class="color">
+                    <h3 class="blue-text">Color</h3>
+                </div> -->
+                <div class="about">
+                    <p class="grey-text">{{product.description}}</p>
+                </div>
+                <button >Add To Cart</button>
+                <div class="categories">
+                    <h3 class="blue-text">Categories: {{product.category}}</h3>
+                </div>
+                <!-- <div class="tags">
+                    <h3 class="blue-text">Tags:</h3>
+                </div> -->
+                <!-- <div class="share">
+                    <h3 class="blue-text">Share</h3>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product-info main-bg">
+    <div class="container">
+        <div class="header-links">
+            <a href="#" class="blue-text underline">Description</a>
+            <a href="#" class="blue-text">Additional Info</a>
+            <a href="#" class="blue-text">Reviews</a>
+            <a href="#" class="blue-text">Video</a>
+        </div>
+        <div class="description-tab">
+            <div>
+                <h3 class="blue-text">
+                    Varius tempor.
+                </h3>
+                <p class="grey-text">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo quas culpa consectetur dolorum error accusantium, amet, placeat esse vel ducimus possimus, vitae id recusandae modi odit ut distinctio fugit aspernatur?
+                </p>
+            </div>
+            <div>
+                <h3 class="blue-text">More details</h3>
+                <div class="more-details-list">
+                    <p class="grey-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas vel accusamus eos enim soluta maiores!</p>
+                    <p class="grey-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas vel accusamus eos enim soluta maiores!</p>
+                    <p class="grey-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas vel accusamus eos enim soluta maiores!</p>
+                    <p class="grey-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas vel accusamus eos enim soluta maiores!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="related-product-container">
+    <div class="container">
+        <h2 class="blue-text">Related Products</h2>
+        <div class="related-products" *ngFor="let product of relatedProducts">
+            <div class="product">
+                <img src="{{ product.thumbnail }}" alt="">
+                <div>
+                    <h3 class="blue-text">{{product.title}}</h3>
+                    <!-- <div class="rating" *ngFor="let rate of  [].constructor(Math.round(product.rating))">
+                        <i class="fas fa-star yellow"></i>
+                    </div> -->
+                </div>
+                <div class="price"><p class="blue-text">${{product.price}}</p></div>
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+<!-- Sponsors -->
+<section class="sponsors">
+    <div class="container">
+        <div class="flex">
+            <img src="assest/img/image 1174.png" alt="">
+        </div>
+    </div>
+</section>
